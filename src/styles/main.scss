@@ -8,12 +8,14 @@ $light-colors: (
 
 $linkedIn-lightMode: (
     background: #f5f5f5,
-    border: #f6f8f9
+    border: #f6f8f9,
+    title: #000
 );
 
 $linkedIn-darkMode: (
     background: #2c2c2c,
-    border: #1d2022
+    border: #1d2022,
+    title: #fff
 );
 
 $input-placeholder-clr: #808080;
@@ -236,14 +238,12 @@ main {
                 }
             }
 
-
-
             #profile__card-fullName.dark {
-                color: white;
+                color: linkedInDarkColors(title);
             }
 
             #profile__card-headline.dark {
-                color: white;
+                color: linkedInDarkColors(title)
             }
 
             #profile__card-company,

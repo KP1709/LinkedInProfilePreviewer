@@ -173,10 +173,10 @@ main section#profile__card #profile__card-info p {
   }
 }
 main section#profile__card #profile__card-info #profile__card-fullName.dark {
-  color: white;
+  color: #fff;
 }
 main section#profile__card #profile__card-info #profile__card-headline.dark {
-  color: white;
+  color: #fff;
 }
 main section#profile__card #profile__card-info #profile__card-company,
 main section#profile__card #profile__card-info #profile__card-location {
