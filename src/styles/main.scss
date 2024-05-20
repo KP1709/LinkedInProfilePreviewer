@@ -1,0 +1,303 @@
+$light-colors: (
+    text: #070808,
+    background: #f6f8f9,
+    primary: #7096a9,
+    secondary: #a0c0cf,
+    accent: #7cb2cb
+);
+
+$linkedIn-lightMode: (
+    background: #f5f5f5,
+    border: #f6f8f9
+);
+
+$linkedIn-darkMode: (
+    background: #2c2c2c,
+    border: #1d2022
+);
+
+$input-placeholder-clr: #808080;
+$profile-card-subtext-clr: #808080;
+$linkedIn-link-clr: #4584f1;
+
+$middle-view: 500px;
+$max-view: 700px;
+$laptop-view: 1000px;
+
+@mixin middle-view {
+    @media (min-width: #{$middle-view}) and (max-width: #{$max-view}) {
+        @content;
+    }
+}
+
+@mixin max-view {
+    @media (min-width: #{$middle-view}) and (max-width: #{$laptop-view}) {
+        @content;
+    }
+}
+
+@mixin laptop-view {
+    @media (min-width: #{$laptop-view}) {
+        @content;
+    }
+}
+
+@function lightColors($color-name) {
+    @return map-get($light-colors, $color-name)
+}
+
+@function linkedInlightColors($color-name) {
+    @return map-get($linkedIn-lightMode, $color-name)
+}
+
+@function linkedInDarkColors($color-name) {
+    @return map-get($linkedIn-darkMode, $color-name)
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+}
+
+header {
+    background-color: lightColors(primary);
+    padding: 1px;
+    color: lightColors(text);
+    text-align: center;
+    font-size: clamp(0.8rem, 2vw, 1rem)
+}
+
+header.dark {
+    background-color: darkColors(primary);
+}
+
+main {
+    display: block;
+    padding: 0 10px;
+
+    @include middle-view {
+        display: block;
+        padding: 0 10px;
+    }
+
+    @include laptop-view {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 3em;
+    }
+
+    section#form {
+        width: 100%;
+        margin-bottom: 20px;
+
+
+        label {
+            margin-top: 10px;
+            margin-bottom: 2px;
+            text-decoration: underline;
+        }
+
+        input {
+            font-size: 0.9rem;
+        }
+
+        input:not(.form__input-image) {
+            padding: 7px 5px;
+            border: 2px solid lightColors(accent);
+            border-radius: 5px;
+            text-indent: 5px;
+        }
+
+        input:not(.form__input-image).dark {
+            border: 2px solid darkColors(accent);
+        }
+
+        input::file-selector-button {
+            padding: 0.5em;
+            background-color: lightColors(secondary);
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+            font-weight: 500;
+            border: transparent;
+            border-radius: 50px;
+        }
+
+        input::file-selector-button.dark {
+            background-color: darkColors(secondary);
+        }
+
+        input::placeholder {
+            color: $input-placeholder-clr;
+        }
+
+        .hints {
+            margin: 2px 0;
+            font-size: 0.8rem;
+            color: $profile-card-subtext-clr;
+        }
+    }
+
+    // Profile card styling
+
+    section#profile__card {
+        position: relative;
+        max-width: 700px;
+        height: fit-content;
+        margin: 0 auto;
+
+        @include laptop-view {
+            margin: auto 0;
+        }
+
+        img#profile__card-banner {
+            border-radius: 5px 5px 0 0;
+        }
+
+
+        #profile__card-headshot {
+            width: 30%;
+            object-fit: cover;
+            position: absolute;
+            top: 30px;
+            left: 10px;
+            border: 4px solid linkedInlightColors(border);
+            border-radius: 50%;
+
+            @include middle-view {
+                width: 6.5em;
+                top: 40px;
+            }
+
+            @include max-view {
+                width: 9em;
+                top: 70px;
+            }
+
+            @include laptop-view {
+                width: 9em;
+                height: 9em;
+                top: 70px;
+            }
+        }
+
+        img#profile__card-headshot.dark {
+            border: 4px solid linkedInDarkColors(border);
+        }
+
+        #profile__card-info {
+            padding: 15px 15px 15px 15px;
+            background-color: linkedInlightColors(background);
+
+            h2 {
+                margin: 40px 0 5px 0;
+                font-size: 1.1rem;
+                font-weight: 500;
+
+                @include middle-view {
+                    margin: 30px 0 5px 0;
+                    font-size: 1.2rem;
+                }
+
+                @include max-view {
+                    margin: 30px 0 5px 0;
+                    font-size: 1.3rem;
+                }
+
+                @include laptop-view {
+                    margin: 30px 0 5px 0;
+                    font-size: 1.3rem;
+                }
+            }
+
+            p {
+                margin: 0;
+                font-size: 0.75rem;
+
+                @include laptop-view {
+                    font-size: 1rem;
+                }
+            }
+
+
+
+            #profile__card-fullName.dark {
+                color: white;
+            }
+
+            #profile__card-headline.dark {
+                color: white;
+            }
+
+            #profile__card-company,
+            #profile__card-location {
+                color: $profile-card-subtext-clr;
+            }
+
+            #profile__card-connectionNumber-phone {
+                @include laptop-view {
+                    display: none;
+                }
+            }
+
+            .link{
+                color: $linkedIn-link-clr;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            #profile__card-connectionNumber-other,
+            #profile__card-contactInfo {
+                display: none;
+
+                @include laptop-view {
+                    display: inline-block;
+                }
+            }
+
+            #profile__card-contactInfo {
+                @include laptop-view {
+                    margin-left: 2px;
+                }
+            }
+        }
+
+        #profile__card-info.dark {
+            background-color: linkedInDarkColors(background);
+        }
+
+        #profile__card-header.dark {
+            background-color: linkedInDarkColors(background);
+
+        }
+    }
+
+    #toggle-theme {
+        width: 100%;
+        margin: 10px 0 5px 0;
+        padding: 10px 15px;
+        background-color: lightColors(accent);
+        font-size: 0.9rem;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        border: transparent;
+        border-radius: 20px;
+    }
+}

@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+}
+
+header {
+  background-color: #7096a9;
+  padding: 1px;
+  color: #070808;
+  text-align: center;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+header.dark {
+  background-color: darkColors(primary);
+}
+
+main {
+  display: block;
+  padding: 0 10px;
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  main {
+    display: block;
+    padding: 0 10px;
+  }
+}
+@media (min-width: 1000px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 3em;
+  }
+}
+main section#form {
+  width: 100%;
+  margin-bottom: 20px;
+}
+main section#form label {
+  margin-top: 10px;
+  margin-bottom: 2px;
+  text-decoration: underline;
+}
+main section#form input {
+  font-size: 0.9rem;
+}
+main section#form input:not(.form__input-image) {
+  padding: 7px 5px;
+  border: 2px solid #7cb2cb;
+  border-radius: 5px;
+  text-indent: 5px;
+}
+main section#form input:not(.form__input-image).dark {
+  border: 2px solid darkColors(accent);
+}
+main section#form input::file-selector-button {
+  padding: 0.5em;
+  background-color: #a0c0cf;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  border: transparent;
+  border-radius: 50px;
+}
+main section#form input::file-selector-button.dark {
+  background-color: darkColors(secondary);
+}
+main section#form input::placeholder {
+  color: #808080;
+}
+main section#form .hints {
+  margin: 2px 0;
+  font-size: 0.8rem;
+  color: #808080;
+}
+main section#profile__card {
+  position: relative;
+  max-width: 700px;
+  height: fit-content;
+  margin: 0 auto;
+}
+@media (min-width: 1000px) {
+  main section#profile__card {
+    margin: auto 0;
+  }
+}
+main section#profile__card img#profile__card-banner {
+  border-radius: 5px 5px 0 0;
+}
+main section#profile__card #profile__card-headshot {
+  width: 30%;
+  object-fit: cover;
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  border: 4px solid #f6f8f9;
+  border-radius: 50%;
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  main section#profile__card #profile__card-headshot {
+    width: 6.5em;
+    top: 40px;
+  }
+}
+@media (min-width: 500px) and (max-width: 1000px) {
+  main section#profile__card #profile__card-headshot {
+    width: 9em;
+    top: 70px;
+  }
+}
+@media (min-width: 1000px) {
+  main section#profile__card #profile__card-headshot {
+    width: 9em;
+    height: 9em;
+    top: 70px;
+  }
+}
+main section#profile__card img#profile__card-headshot.dark {
+  border: 4px solid #1d2022;
+}
+main section#profile__card #profile__card-info {
+  padding: 15px 15px 15px 15px;
+  background-color: #f5f5f5;
+}
+main section#profile__card #profile__card-info h2 {
+  margin: 40px 0 5px 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  main section#profile__card #profile__card-info h2 {
+    margin: 30px 0 5px 0;
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 500px) and (max-width: 1000px) {
+  main section#profile__card #profile__card-info h2 {
+    margin: 30px 0 5px 0;
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 1000px) {
+  main section#profile__card #profile__card-info h2 {
+    margin: 30px 0 5px 0;
+    font-size: 1.3rem;
+  }
+}
+main section#profile__card #profile__card-info p {
+  margin: 0;
+  font-size: 0.75rem;
+}
+@media (min-width: 1000px) {
+  main section#profile__card #profile__card-info p {
+    font-size: 1rem;
+  }
+}
+main section#profile__card #profile__card-info #profile__card-fullName.dark {
+  color: white;
+}
+main section#profile__card #profile__card-info #profile__card-headline.dark {
+  color: white;
+}
+main section#profile__card #profile__card-info #profile__card-company,
+main section#profile__card #profile__card-info #profile__card-location {
+  color: #808080;
+}
+@media (min-width: 1000px) {
+  main section#profile__card #profile__card-info #profile__card-connectionNumber-phone {
+    display: none;
+  }
+}
+main section#profile__card #profile__card-info .link {
+  color: #4584f1;
+  font-weight: bold;
+  text-decoration: none;
+}
+main section#profile__card #profile__card-info #profile__card-connectionNumber-other,
+main section#profile__card #profile__card-info #profile__card-contactInfo {
+  display: none;
+}
+@media (min-width: 1000px) {
+  main section#profile__card #profile__card-info #profile__card-connectionNumber-other,
+  main section#profile__card #profile__card-info #profile__card-contactInfo {
+    display: inline-block;
+  }
+}
+@media (min-width: 1000px) {
+  main section#profile__card #profile__card-info #profile__card-contactInfo {
+    margin-left: 2px;
+  }
+}
+main section#profile__card #profile__card-info.dark {
+  background-color: #2c2c2c;
+}
+main section#profile__card #profile__card-header.dark {
+  background-color: #2c2c2c;
+}
+main #toggle-theme {
+  width: 100%;
+  margin: 10px 0 5px 0;
+  padding: 10px 15px;
+  background-color: #7cb2cb;
+  font-size: 0.9rem;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  border: transparent;
+  border-radius: 20px;
+}
