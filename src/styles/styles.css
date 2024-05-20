@@ -189,7 +189,7 @@ main section#profile__card #profile__card-info #profile__card-location {
 }
 main section#profile__card #profile__card-info .link {
   color: #4584f1;
-  font-weight: bold;
+  font-weight: 500;
   text-decoration: none;
 }
 main section#profile__card #profile__card-info #profile__card-connectionNumber-other,
