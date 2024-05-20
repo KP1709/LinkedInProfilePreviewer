@@ -1,4 +1,5 @@
 # LinkedIn Profile Previewer
+[![Netlify Status](https://api.netlify.com/api/v1/badges/550eb03b-3aee-4053-a836-20b5c955e32f/deploy-status)](https://app.netlify.com/sites/kareenapatel-linkedinprofilepreviewer/deploys)
 
 ## ⌨️ Technology + Assets stack
 HTML / SASS + SCSS / React / Vite / npm / Node.js / Netlify 
