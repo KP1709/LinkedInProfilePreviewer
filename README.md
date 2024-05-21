@@ -1,5 +1,5 @@
 # LinkedIn Profile Previewer
-
+![alt text](ThumbnailLinkedInProfilePreviewer.png)
 ## ⌨️ Technology + Assets stack
 HTML / SASS + SCSS / React / Vite / npm / Node.js / Netlify 
 
