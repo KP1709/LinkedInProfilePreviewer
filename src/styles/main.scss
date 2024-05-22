@@ -48,7 +48,7 @@ $laptop-view: 1000px;
     @return map-get($light-colors, $color-name)
 }
 
-@function linkedInlightColors($color-name) {
+@function linkedInLightColors($color-name) {
     @return map-get($linkedIn-lightMode, $color-name)
 }
 
@@ -182,7 +182,7 @@ main {
             position: absolute;
             top: 30px;
             left: 10px;
-            border: 4px solid linkedInlightColors(border);
+            border: 4px solid linkedInLightColors(border);
             border-radius: 50%;
 
             @include middle-view {
@@ -208,7 +208,7 @@ main {
 
         #profile__card-info {
             padding: 15px 15px 15px 15px;
-            background-color: linkedInlightColors(background);
+            background-color: linkedInLightColors(background);
 
             h2 {
                 margin: 40px 0 5px 0;
