@@ -33,7 +33,7 @@ $laptop-view: 1000px;
 }
 
 @mixin max-view {
-    @media (min-width: #{$middle-view}) and (max-width: #{$laptop-view}) {
+    @media (min-width: #{$max-view}) and (max-width: #{$laptop-view}) {
         @content;
     }
 }
@@ -186,8 +186,8 @@ main {
             border-radius: 50%;
 
             @include middle-view {
-                width: 6.5em;
-                top: 40px;
+                width: 20%;
+                top: 70px;
             }
 
             @include max-view {
@@ -212,12 +212,12 @@ main {
 
             h2 {
                 margin: 40px 0 5px 0;
-                font-size: 1.1rem;
+                font-size: 1.2rem;
                 font-weight: 500;
 
                 @include middle-view {
                     margin: 30px 0 5px 0;
-                    font-size: 1.2rem;
+                    font-size: 1.3rem;
                 }
 
                 @include laptop-view {
@@ -230,6 +230,10 @@ main {
                 margin: 0;
                 font-size: 0.75rem;
 
+                @include max-view {
+                    font-size: 1rem;
+                }
+
                 @include laptop-view {
                     margin: 3px 0 5px 0;
                     font-size: 1rem;
@@ -237,6 +241,10 @@ main {
             }
 
             #profile__card-headline {
+                @include max-view {
+                    font-size: 1.01rem;
+                }
+
                 @include laptop-view {
                     font-size: 1.05rem;
                 }
@@ -258,18 +266,26 @@ main {
             #profile__card-company {
                 display: inline-block;
 
+                @include max-view {
+                    display: none;
+                }
+
                 @include laptop-view {
                     display: none;
                 }
             }
 
             #profile__card-connectionNumber-phone {
+                @include max-view {
+                    display: none;
+                }
+
                 @include laptop-view {
                     display: none;
                 }
             }
 
-            .link{
+            .link {
                 color: $linkedIn-link-clr;
                 font-weight: 500;
                 text-decoration: none;
@@ -279,15 +295,17 @@ main {
             #profile__card-contactInfo {
                 display: none;
 
+                @include max-view {
+                    display: inline-block;
+                }
+
                 @include laptop-view {
                     display: inline-block;
                 }
             }
 
             #profile__card-contactInfo {
-                @include laptop-view {
-                    margin-left: 2px;
-                }
+                margin-left: 2px;
             }
         }
 
