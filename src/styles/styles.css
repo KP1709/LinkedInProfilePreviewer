@@ -189,6 +189,14 @@ main section#profile__card #profile__card-info #profile__card-company,
 main section#profile__card #profile__card-info #profile__card-location {
   color: #808080;
 }
+main section#profile__card #profile__card-info #profile__card-company {
+  display: inline-block;
+}
+@media (min-width: 1000px) {
+  main section#profile__card #profile__card-info #profile__card-company {
+    display: none;
+  }
+}
 @media (min-width: 1000px) {
   main section#profile__card #profile__card-info #profile__card-connectionNumber-phone {
     display: none;

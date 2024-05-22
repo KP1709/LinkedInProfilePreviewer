@@ -259,6 +259,14 @@ main {
                 color: $profile-card-subtext-clr;
             }
 
+            #profile__card-company {
+                display: inline-block;
+
+                @include laptop-view {
+                    display: none;
+                }
+            }
+
             #profile__card-connectionNumber-phone {
                 @include laptop-view {
                     display: none;
