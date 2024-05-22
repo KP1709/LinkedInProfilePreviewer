@@ -174,6 +174,11 @@ main section#profile__card #profile__card-info p {
     font-size: 1rem;
   }
 }
+@media (min-width: 1000px) {
+  main section#profile__card #profile__card-info #profile__card-headline {
+    font-size: 1.05rem;
+  }
+}
 main section#profile__card #profile__card-info #profile__card-fullName.dark {
   color: #fff;
 }

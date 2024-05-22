@@ -240,6 +240,12 @@ main {
                 }
             }
 
+            #profile__card-headline {
+                @include laptop-view {
+                    font-size: 1.05rem;
+                }
+            }
+
             #profile__card-fullName.dark {
                 color: linkedInDarkColors(title);
             }
